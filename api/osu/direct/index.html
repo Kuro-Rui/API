@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const dl = params.get("dl");  // Beatmapset
+            const b = params.get("b");  // Beatmap
+
+            if (dl) {
+                window.location.href = `osu://dl/${dl}`;
+            } else if (b) {
+                window.location.href = `osu://b/${b}`;
+            } else {
+                alert('Please use either "dl" or "b" for parameter.');
+            }
+        })();
+    </script>
+</head>
+</html>
