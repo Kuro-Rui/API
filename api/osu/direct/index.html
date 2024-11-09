@@ -13,9 +13,13 @@
             } else if (b) {
                 window.location.href = `osu://b/${b}`;
             } else {
-                alert('Please use either "dl" or "b" for parameter.');
+                const message = document.getElementById("message");
+                message.textContent = 'Please use either "dl" or "b" for parameter.';
             }
         })();
     </script>
 </head>
+<body>
+    <p id="message">Redirecting...</p>
+</body>
 </html>

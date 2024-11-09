@@ -10,9 +10,13 @@
             if (time) {
                 window.location.href = `osu://edit/${time}`;
             } else {
-                alert("Please provide a time.");
+                const message = document.getElementById("message");
+                message.textContent = "Please provide a time.";
             }
         })();
     </script>
 </head>
+<body>
+    <p id="message">Redirecting...</p>
+</body>
 </html>
