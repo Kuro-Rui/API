@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <p id="message">Redirecting...</p>
+    <p id="message"></p>
     <script type="text/javascript">
         (function() {
             const params = new URLSearchParams(window.location.search);
-            const dl = params.get("dl");  // Beatmapset
+            const dl = params.get("dl"); // Beatmapset
             const b = params.get("b");  // Beatmap
+            const message = document.getElementById("message");
 
             if (dl) {
                 window.location.href = `osu://dl/${dl}`;
+                message.textContent = "Redirecting...";
             } else if (b) {
                 window.location.href = `osu://b/${b}`;
+                message.textContent = "Redirecting...";
             } else {
-                const message = document.getElementById("message");
                 message.textContent = 'Please use either "dl" or "b" for parameter.';
             }
         })();

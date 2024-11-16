@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <p id="message">Redirecting...</p>
+    <p id="message"></p>
     <script type="text/javascript">
         (function() {
             const params = new URLSearchParams(window.location.search);
             const time = params.get("time");
+            const message = document.getElementById("message");
 
             if (time) {
                 window.location.href = `osu://edit/${time}`;
+                message.textContent = "Redirecting...";
             } else {
-                const message = document.getElementById("message");
                 message.textContent = "Please provide a time.";
             }
         })();
